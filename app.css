@@ -131,7 +131,8 @@ body {
 }
 
 .transaction-input input[type="text"],
-.transaction-input input[type="number"] {
+.transaction-input input[type="number"],
+.transaction-input input[type="date"] {
   width: 250px;
   padding: 10px;
   border: 1px solid #ccc;
