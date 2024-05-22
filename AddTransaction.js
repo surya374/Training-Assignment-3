@@ -72,7 +72,7 @@ const AddTransaction = ({ expenses, onSubmit, setExpenses }) => {
       <div className="list-table">
         <h3>EXPENSES</h3>
 
-        {expenses.map((expense) => (
+        {expenses.slice().reverse().map((expense) => (
           <ul key={expense} className="list">
             <li className="minus">
               {expense.expendedList}
