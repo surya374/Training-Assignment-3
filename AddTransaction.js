@@ -16,7 +16,6 @@ const AddTransaction = ({ expenses, onSubmit, setExpenses }) => {
     onSubmit(expenses);
     setExpendedList("");
     setAmount("");
-    setDate("");
   };
 
   return (
