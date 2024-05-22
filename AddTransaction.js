@@ -4,6 +4,7 @@ import "./app.css";
 const AddTransaction = ({ expenses, onSubmit, setExpenses }) => {
   const [amount, setAmount] = useState();
   const [expendedList, setExpendedList] = useState("");
+  const [date, setDate] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,6 +16,7 @@ const AddTransaction = ({ expenses, onSubmit, setExpenses }) => {
     onSubmit(expenses);
     setExpendedList("");
     setAmount("");
+    setDate("");
   };
 
   return (
@@ -51,6 +53,16 @@ const AddTransaction = ({ expenses, onSubmit, setExpenses }) => {
             />
           </div>
 
+          <div>
+            <input
+              type="date"
+              onChange={(e) => setDate(e.target.value)}
+              value={date}
+              id="date"
+              name="date"
+            />
+          </div>
+
           <button className="button-submit" onClick={(e) => handleSubmit(e)}>
             Submit
           </button>
@@ -63,6 +75,7 @@ const AddTransaction = ({ expenses, onSubmit, setExpenses }) => {
           <ul key={expense} className="list">
             <li className="minus">
               {expense.expendedList}
+              <span>{date}</span>
               <span>{expense.amount.toFixed(2)}</span>
             </li>
           </ul>
