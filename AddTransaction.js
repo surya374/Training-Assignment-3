@@ -19,18 +19,6 @@ const AddTransaction = ({ expenses, onSubmit, setExpenses }) => {
 
   return (
     <>
-      <div className="list-table">
-        <h3>EXPENSES</h3>
-
-        {expenses.map((expense) => (
-          <ul key={expense} className="list">
-            <li className="minus">
-              {expense.expendedList}
-              <span>{expense.amount.toFixed(2)}</span>
-            </li>
-          </ul>
-        ))}
-      </div>
       <div className="transactionForm">
         <div>
           <h2 className="heading-add">ADD TRANSACTION</h2>
@@ -67,6 +55,18 @@ const AddTransaction = ({ expenses, onSubmit, setExpenses }) => {
             Submit
           </button>
         </div>
+      </div>
+      <div className="list-table">
+        <h3>EXPENSES</h3>
+
+        {expenses.map((expense) => (
+          <ul key={expense} className="list">
+            <li className="minus">
+              {expense.expendedList}
+              <span>{expense.amount.toFixed(2)}</span>
+            </li>
+          </ul>
+        ))}
       </div>
     </>
   );
