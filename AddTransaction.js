@@ -4,18 +4,20 @@ import "./app.css";
 const AddTransaction = ({ expenses, onSubmit, setExpenses }) => {
   const [amount, setAmount] = useState();
   const [expendedList, setExpendedList] = useState("");
-  const [date, setDate] = useState([]);
+  const [date, setDate] = useState();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const expenses = {
       amount: parseFloat(amount),
       expendedList,
+      date,
     };
 
     onSubmit(expenses);
     setExpendedList("");
     setAmount("");
+    setDate("");
   };
 
   return (
@@ -74,7 +76,7 @@ const AddTransaction = ({ expenses, onSubmit, setExpenses }) => {
           <ul key={expense} className="list">
             <li className="minus">
               {expense.expendedList}
-              <span>{date}</span>
+              <span>{expense.date}</span>
               <span>{expense.amount.toFixed(2)}</span>
             </li>
           </ul>
